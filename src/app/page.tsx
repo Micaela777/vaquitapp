@@ -4,6 +4,8 @@ import { getConfirmedPayments } from "@/lib/purchases";
 import { getCampaign } from "@/lib/campaign";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const confirmed = await getConfirmedPayments();
   const totalDonations = confirmed.reduce((a, b) => a + b.amount, 0);
